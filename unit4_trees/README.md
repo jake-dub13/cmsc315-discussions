@@ -33,10 +33,12 @@ Your reflection should be approximately 150–200 words and address the followin
 
 ## Implementation Summary
 
-I implemented a Binary Search Tree in Python using recursive insertion, searching, and in-order traversal. The tree stored smaller values in the left subtree and larger values in the right subtree, which allowed the program to reduce the search space after each comparison.
+I implemented a Binary Search Tree in Python using recursive insertion, searching, and in-order traversal. The tree used employee ID numbers as a real-world example. Smaller employee IDs were stored in the left subtree, while larger employee IDs were stored in the right subtree.
 
-I inserted seven values into the tree and created both left and right subtrees. I then performed an in-order traversal, which returned the values in sorted order because the traversal visits the left subtree, the current node, and then the right subtree.
+I inserted seven employee IDs into the tree so that both left and right subtrees were created. I then performed an in-order traversal, which returned the employee IDs in sorted order because the traversal visited the left subtree, the current node, and then the right subtree.
 
-For searching, I tested two values that were present in the tree and two values that were missing. The recursive search followed only the subtree where the target value could exist instead of checking every value sequentially.
+For searching, I tested two employee IDs that were present in the tree and two IDs that were missing. The recursive search followed only the subtree where the employee ID could exist, which reduced the number of values that needed to be checked.
 
-I also tested several edge cases. Searching an empty tree returned False, traversing an empty tree returned an empty list, and duplicate values were ignored. These tests showed how the BST handled unusual conditions without causing errors.
+I also tested several edge cases. Searching an empty tree returned False, traversing an empty tree returned an empty list, and duplicate employee IDs were ignored. These tests showed how the BST handled unusual conditions without causing errors.
+
+The employee ID example demonstrated how a BST could be used to organize records for efficient searching. A balanced BST can reduce the search space after each comparison, but inserting values in a poor order can create a skewed tree and make searching less efficient.

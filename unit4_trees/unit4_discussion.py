@@ -156,19 +156,19 @@ def main():
     # 4. Display the values inserted.
     # 5. Use comments to explain why a BST is efficient at reducing search space for each step.
 
-    print("\n=== TREE CONSTRUCTION ===")
+    print("\n=== EMPLOYEE ID TREE CONSTRUCTION ===")
 
-    tree = BST()
+    employee_tree = BST()
 
-    values = [50, 30, 70, 20, 40, 60, 80]
+    employee_ids = [1050, 1025, 1075, 1010, 1040, 1060, 1090]
 
-    # These values create both left and right subtrees.
-    # Each comparison determines which side of the tree must be searched,
-    # reducing the number of possible locations for the value.
-    for value in values:
-        tree.insert(value)
+    # These employee IDs create both left and right subtrees.
+    # Each comparison determines whether the ID could be found
+    # in the left or right subtree, reducing the search space.
+    for employee_id in employee_ids:
+        employee_tree.insert(employee_id)
 
-    print("Values inserted:", values)
+    print("Employee IDs inserted:", employee_ids)
 
     # ===============================
     # TODO (Student): IN-ORDER TRAVERSAL
@@ -184,10 +184,10 @@ def main():
 
     # In-order traversal visits the left subtree first,
     # then the current node, and finally the right subtree.
-    # This produces sorted values in a BST.
-    traversal = tree.inorder()
+    # This produces the employee IDs in sorted order.
+    traversal = employee_tree.inorder()
 
-    print("In-order traversal:", traversal)
+    print("Employee IDs in sorted order:", traversal)
 
     # ===============================
     # TODO (Student): SEARCH TESTS
@@ -198,15 +198,15 @@ def main():
     # 2. Search for at least two values that do not exist.
     # 3. Use comments to clearly explain the results.
 
-    print("\n=== SEARCH TESTS ===")
+    print("\n=== EMPLOYEE ID SEARCH TESTS ===")
 
-    # Existing values should return True.
-    print("Search for 40:", tree.search(40))
-    print("Search for 60:", tree.search(60))
+    # Existing employee IDs should return True.
+    print("Search for employee ID 1040:", employee_tree.search(1040))
+    print("Search for employee ID 1060:", employee_tree.search(1060))
 
-    # Missing values should return False.
-    print("Search for 25:", tree.search(25))
-    print("Search for 90:", tree.search(90))
+    # Missing employee IDs should return False.
+    print("Search for employee ID 1030:", employee_tree.search(1030))
+    print("Search for employee ID 1100:", employee_tree.search(1100))
 
     # ===============================
     # TODO (Student): EDGE CASES
@@ -224,16 +224,21 @@ def main():
 
     print("\n=== EDGE CASES ===")
 
-    # Edge case 1: Searching an empty tree should return False.
+    # Edge case 1: Searching an empty employee tree should return False.
     empty_tree = BST()
-    print("Search empty tree for 50:", empty_tree.search(50))
+    print("Search empty tree for employee ID 1050:",
+          empty_tree.search(1050))
 
     # Edge case 2: Traversing an empty tree should return an empty list.
-    print("In-order traversal of empty tree:", empty_tree.inorder())
+    print("In-order traversal of empty tree:",
+          empty_tree.inorder())
 
-    # Edge case 3: Duplicate values are ignored by this BST.
-    tree.insert(50)
-    print("After attempting to insert duplicate 50:", tree.inorder())
+    # Edge case 3: Duplicate employee IDs are ignored in this BST.
+    employee_tree.insert(1050)
+    print(
+        "After attempting to insert duplicate employee ID 1050:",
+        employee_tree.inorder()
+    )
 
 
 if __name__ == "__main__":
